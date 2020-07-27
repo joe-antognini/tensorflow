@@ -283,6 +283,8 @@ TfLiteStatus HexagonDelegateKernel::BuildGraph(
   return kTfLiteOk;
 }
 
+hexagon_nn_nn_id HexagonDelegateKernel::GetGraphId() { return graph_id_; }
+
 HexagonDelegateKernel::~HexagonDelegateKernel() {
   if (graph_id_ != -1) {
     hexagon_nn_->hexagon_nn_teardown(graph_id_);

@@ -54,6 +54,8 @@ class HexagonDelegateKernel : public SimpleDelegateKernelInterface {
   // Allocate Hexagon tensordefs for graph I/O & execute it.
   TfLiteStatus Eval(TfLiteContext* context, TfLiteNode* node) override;
 
+  hexagon_nn_nn_id GetGraphId();
+
   ~HexagonDelegateKernel() override;
 
   // Sets the environment required for Hexagon execution: DSP attributes,
